@@ -8,15 +8,15 @@ The code in this repo was used to generate the virtualbox image on the usb stick
 
 ## For the tutorial:
 
-1) Install VirtualBox from //usbstick/python-nlp-tools/install/yourOS
-2) Install Vagrant from //usbstick/python-nlp-tools/install/yourOS
-3) Bring up the provided vagrant image
+1. Install VirtualBox from //usbstick/python-nlp-tools/install/yourOS
+1. Install Vagrant from //usbstick/python-nlp-tools/install/yourOS
+1. Bring up the provided vagrant image
 
 
 ```
 # grab this repo
-git clone https://github.com/talentpair/puppet_example.git
-cd puppet_example
+git clone https://github.com/talentpair/puppet-python-nlp-tools.git
+cd puppet-python-nlp-tools
 
 # Bring up the vagrant box
 vagrant box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
@@ -38,8 +38,8 @@ sudo apt-get install git puppet
 # Uuse this repo to install it all
 mkdir dev
 cd dev
-git clone https://github.com/talentpair/puppet_example.git
-cd puppet_example
+git clone https://github.com/talentpair/puppet-python-nlp-tools.git
+cd puppet-python-nlp-tools
 
 # This just makes sure that we have an up-to-date version of Puppet before continuing
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/puppet.pp || test $? -eq 2
