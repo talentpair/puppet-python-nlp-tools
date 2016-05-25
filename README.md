@@ -1,10 +1,10 @@
 # DevOps: Making an Impact with Python NLP Tools
 
-We've provided a usb stick that contains all files needed for setup.
+We've provided a usb stick that contains all files needed for setup as well as the data needed for the tutorial.
 
 The code in this repo was used to generate the virtualbox image on the usb stick and can be used to install the complete dev environment
- on any linux machine or virtual linux machine. It's not needed for the tutorial but check it out if you're interested! (instructions
- below)
+ on any Ubuntu 14 box, virtual or otherwise. It's not needed for the tutorial unless you're having problems with Vagrant. The instructions should work
+ for a fresh Ubuntu 14 box on amazon/DO/whatever (instructions below)
 
 ## For the tutorial:
 
@@ -27,7 +27,7 @@ vagrant ssh
 ```
 
 
-## Example: Use Puppet to install on a vanilla Ubuntu box
+## Example: Use Puppet to install the environment on a vanilla Ubuntu 14 box
 
 ```bash
 # First, SSH to the machine
@@ -41,13 +41,13 @@ cd dev
 git clone https://github.com/talentpair/puppet-python-nlp-tools.git
 cd puppet-python-nlp-tools
 
-# This just makes sure that we have an up-to-date version of Puppet before continuing
+# Make sure that we have an up-to-date version of Puppet before continuing
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/puppet.pp || test $? -eq 2
 
-# this will take a while so you might want to be in screen (or tmux if you like that sort of thing)
+# The install will take a while so you might want to be in screen (or tmux if you like that sort of thing)
 screen          # screen -rd will get you back
 
-# Now do the full install including stuff from apt and pip
+# Do the full install including stuff from apt and pip
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/tutorial.pp || test $? -eq 2
 ```
  
