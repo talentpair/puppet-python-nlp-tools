@@ -1,0 +1,22 @@
+vbell off
+startup_message off
+autodetach on
+defscrollback 1000
+deflogin on
+nonblock on
+
+
+bindkey  ^\ command
+
+screen -t work0         #0
+screen -t work1         #1
+screen -t work2         #2
+screen -t work3         #3
+screen -t work4         #4
+
+
+#change the hardstatus settings to give an window list at the bottom of the
+#screen, with the time and date and with the current window highlighted
+hardstatus alwayslastline
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}][ %{G}%H %{g}]'
