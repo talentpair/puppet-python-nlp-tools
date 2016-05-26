@@ -31,8 +31,9 @@ Instructions are at [github.com/totalgood/twip](https://github.com/totalgood/twi
 # SSH to your fancy new machine
 vagrant ssh
 
-# grab the tutorial repo proper
-git clone https://github.com/totalgood/twip.git
+# refresh the tutorial repo proper
+cd /home/vagrant/twip
+git pull
 
 # data is on the usb stick at //usbstick/python-nlp-tools/data and also baked into the vagrant box
 ls /home/vagrant/data/all_tweets.csv
