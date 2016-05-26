@@ -21,6 +21,10 @@ cd puppet-python-nlp-tools
 # Bring up the vagrant box
 vagrant box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
 vagrant up --provision
+
+# On windows you need the full path
+c:\HashiCorp\Vagrant\bin\vagrant.exe box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
+c:\HashiCorp\Vagrant\bin\vagrant.exe up --provision
 ```
 
 ## Lets get to the data science!
