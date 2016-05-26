@@ -34,6 +34,7 @@ Instructions are at [github.com/totalgood/twip](https://github.com/totalgood/twi
 ```bash
 # SSH to your fancy new machine
 vagrant ssh
+c:\HashiCorp\Vagrant\bin\vagrant.exe ssh
 
 # refresh the tutorial repo proper
 cd /home/vagrant/twip
