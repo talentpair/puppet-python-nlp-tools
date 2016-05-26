@@ -2,6 +2,9 @@ import os
 
 from matplotlib import get_backend
 from matplotlib import use as set_backend
+import gensim   # noqa
+import sklearn  # noqa
+import pandas   # noqa
 
 os.environ['QT_API'] = 'pyside'
 DEFAULT_MPL_BACKEND = get_backend()
