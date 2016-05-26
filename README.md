@@ -14,6 +14,8 @@ The code in this repo was used to generate the virtualbox image on the usb stick
 
 
 ```bash
+# make sure you have git on your host machine
+
 # grab this repo
 git clone https://github.com/talentpair/puppet-python-nlp-tools.git
 cd puppet-python-nlp-tools
@@ -23,10 +25,13 @@ vagrant box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/tr
 vagrant up --provision
 
 # On windows you need the full path
+# make sure you have a few command windows open
+start cmd
 c:\HashiCorp\Vagrant\bin\vagrant.exe box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
 c:\HashiCorp\Vagrant\bin\vagrant.exe up --provision
 
 # If the box fails to come up, try this 
+# you need to get the full boxname from the oracle VirtualBox Manager settings interface
 "c:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm boxname --hwvirtex off
 ```
 
