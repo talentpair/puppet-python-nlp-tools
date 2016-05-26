@@ -25,6 +25,9 @@ vagrant up --provision
 # On windows you need the full path
 c:\HashiCorp\Vagrant\bin\vagrant.exe box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
 c:\HashiCorp\Vagrant\bin\vagrant.exe up --provision
+
+# If the box fails to come up, try this 
+"c:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm boxname --hwvirtex off
 ```
 
 ## Lets get to the data science!
