@@ -3,15 +3,37 @@
 We've provided a usb stick that contains all files needed for setup as well as the data needed for the tutorial.
 
 The code in this repo was used to generate the virtualbox image on the usb stick and can be used to install the complete dev environment
- on any Ubuntu 14 box, virtual or otherwise. Most of the code here is not needed for the tutorial unless you're having problems with Vagrant. 
- The instructions below should work for a fresh Ubuntu 14 box on amazon/DO/whatever.
+ from scratch on any Ubuntu 14 box, virtual or otherwise.
 
 ## For the tutorial:
+
+First get this repo
+
+```bash
+# make sure you have git on your host machine
+
+# grab this repo
+git clone https://github.com/talentpair/puppet-python-nlp-tools.git
+cd puppet-python-nlp-tools
+```
+
+Then install an X11 provider
+
+1. Available by default on linux
+1. [XQuartz](https://www.xquartz.org/) is a good one for mac
+1. Included with [Cygwin](http://x.cygwin.com/) on PC
+    
+## Windows
+
+The vagrant setup is unreliable so we'll just use an amazon server.  Ask the instructor for an IP address
+
+
+
+## Mac / Linux
 
 1. Install VirtualBox from //usbstick/python-nlp-tools/install/yourOS
 1. Install Vagrant from //usbstick/python-nlp-tools/install/yourOS
 1. Bring up the provided vagrant image
-
 
 ```bash
 # make sure you have git on your host machine
