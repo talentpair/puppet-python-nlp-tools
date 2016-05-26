@@ -35,9 +35,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.ssh.insert_key = false
 
   # Forward guest port 8000 to host port 8080 and name mapping
-  config.vm.network :forwarded_port, guest: 8000, host: 8080
-  # config.vm.network "private_network", type: "dhcp"
-  # config.vm.network :forwarded_port, guest: 8000, host: 8080, host_ip:'127.0.0.1'
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.network :forwarded_port, guest: 8000, host: 8080, host_ip:'127.0.0.1'
 
   # allow copy/paste
   config.ssh.forward_x11 = true
