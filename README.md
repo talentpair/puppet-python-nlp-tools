@@ -23,16 +23,6 @@ cd puppet-python-nlp-tools
 # Bring up the vagrant box
 vagrant box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
 vagrant up --provision
-
-# On windows you need the full path
-# make sure you have a few command windows open
-start cmd
-c:\HashiCorp\Vagrant\bin\vagrant.exe box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
-c:\HashiCorp\Vagrant\bin\vagrant.exe up --provision
-
-# If the box fails to come up, try this 
-# you need to get the full boxname from the oracle VirtualBox Manager settings interface
-"c:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm boxname --hwvirtex off
 ```
 
 ## Lets get to the data science!
@@ -42,7 +32,6 @@ Instructions are at [github.com/totalgood/twip](https://github.com/totalgood/twi
 ```bash
 # SSH to your fancy new machine
 vagrant ssh
-c:\HashiCorp\Vagrant\bin\vagrant.exe ssh
 
 # refresh the tutorial repo proper
 cd /home/vagrant/twip
