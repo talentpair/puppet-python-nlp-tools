@@ -53,11 +53,14 @@ class tools {
     "postgresql-client-9.4",
     "redis-tools",
     "libjpeg-dev",
+    "libpng12-dev",
     "libpq-dev",
 
     # required for latest matplotlib on 14.04 Ubuntu
     "pkg-config",
     "libfreetype6-dev",
+    "tk-dev",
+    "python-tk",
   ]
 
   # install packages
@@ -84,14 +87,14 @@ class tools {
     require => [ Exec["apt_update"], Apt::Source['apt.postgresql.org'], Package[$toolspackages] ]
   }
 
-  package { "python-matplotlib":
-    ensure => present,
-    require => [ Exec["apt_update"], Apt::Source['apt.postgresql.org'], Package[$dataanlysistools] ]
+  exec {"install_setuptools":
+    command => "pip install -U setuptools",
+    require => Package['python-pip']
   }
 
   exec {"install_pip":
     command => "pip install -U pip",
-    require => Package['python-pip'],
+    require => [ Package['python-pip'], Exec["install_setuptools"] ]
   }
 
   file {"/etc/tutorial.requirements.txt":

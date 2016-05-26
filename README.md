@@ -3,8 +3,8 @@
 We've provided a usb stick that contains all files needed for setup as well as the data needed for the tutorial.
 
 The code in this repo was used to generate the virtualbox image on the usb stick and can be used to install the complete dev environment
- on any Ubuntu 14 box, virtual or otherwise. It's not needed for the tutorial unless you're having problems with Vagrant. The instructions should work
- for a fresh Ubuntu 14 box on amazon/DO/whatever (instructions below)
+ on any Ubuntu 14 box, virtual or otherwise. Most of the code here is not needed for the tutorial unless you're having problems with Vagrant. 
+ The instructions below should work for a fresh Ubuntu 14 box on amazon/DO/whatever.
 
 ## For the tutorial:
 
@@ -13,7 +13,7 @@ The code in this repo was used to generate the virtualbox image on the usb stick
 1. Bring up the provided vagrant image
 
 
-```
+```bash
 # grab this repo
 git clone https://github.com/talentpair/puppet-python-nlp-tools.git
 cd puppet-python-nlp-tools
@@ -21,9 +21,21 @@ cd puppet-python-nlp-tools
 # Bring up the vagrant box
 vagrant box add trusty64-python-nlp-tools //usbstick/python-nlp-tools/install/trusty64-python-nlp-tools.box
 vagrant up --provision
+```
 
+## Lets get to the data science!
+
+Instructions are at [github.com/totalgood/twip](https://github.com/totalgood/twip/), they should be run inside your vagrant box 
+
+```bash
 # SSH to your fancy new machine
 vagrant ssh
+
+# grab the tutorial repo proper
+git clone git@github.com:totalgood/twip.git
+
+# data is on the usb stick at //usbstick/python-nlp-tools/data and also baked into the vagrant box
+ls /home/vagrant/data/all_tweets.csv
 ```
 
 
@@ -35,7 +47,7 @@ vagrant ssh
 # Install the tools you need to bootstrap
 sudo apt-get install git puppet
 
-# Uuse this repo to install it all
+# Use this repo to install it all
 mkdir dev
 cd dev
 git clone https://github.com/talentpair/puppet-python-nlp-tools.git
@@ -50,4 +62,3 @@ screen          # screen -rd will get you back
 # Do the full install including stuff from apt and pip
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/tutorial.pp || test $? -eq 2
 ```
- 
