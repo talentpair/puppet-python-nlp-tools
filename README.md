@@ -96,8 +96,6 @@ git pull
 
 # data is on the usb stick at //usbstick/python-nlp-tools/data and also baked into the vagrant box
 ls /home/vagrant/data/all_tweets.csv
-
-cd /home/vagrant/twip
 ipython
 ```
 
@@ -105,7 +103,7 @@ ipython
 ```py
 # inside ipython
 import pandas as pd
-with open('home/vagrant/data/all_tweets.csv', 'rU') as f:
+with open('/home/vagrant/data/all_tweets.csv', 'rU') as f:
   df = pd.read_csv(f, index_col=0, parse_dates=True, engine='python')
 ```
 
