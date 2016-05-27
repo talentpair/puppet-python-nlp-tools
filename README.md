@@ -79,7 +79,7 @@ vagrant up --provision
 # verify your setup by running the plottest.py script, you should get a simple plot
 # his should be done from XQuartz on a mac, the normal terminal will not have X11 enabled
 vagrant ssh
-python /vagrant/puppet-python-nlp-tools/plottest.py 
+python /vagrant/plottest.py 
 ```
 
 ## Lets get to the data science!
