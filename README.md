@@ -82,7 +82,7 @@ vagrant ssh
 python /vagrant/plottest.py
 ```
 
-## Lets get to the data science!
+## Logging In
 
 Instructions are at [github.com/totalgood/twip](https://github.com/totalgood/twip/), they should be run inside your vagrant box
 
@@ -96,10 +96,26 @@ git pull
 
 # data is on the usb stick at //usbstick/python-nlp-tools/data and also baked into the vagrant box
 ls /home/vagrant/data/all_tweets.csv
+
+cd /home/vagrant/twip
+ipython
 ```
 
+## Lets get to the data science!
+```py
+# inside ipython
+import pandas as pd
+with open('home/vagrant/data/all_tweets.csv', 'rU') as f:
+  df = pd.read_csv(f, index_col=0, parse_dates=True, engine='python')
+```
 
-## Example: Use Puppet to install the environment on a vanilla Ubuntu 14 box
+Now hack away!
+
+...
+
+## Beyond this tutorial
+
+Example: Use Puppet to install the environment on a vanilla Ubuntu 14 box to use this as a base for your own projects!
 
 ```bash
 # First, SSH to the machine
@@ -123,5 +139,3 @@ screen          # screen -rd will get you back
 # Do the full install including stuff from apt and pip
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/tutorial.pp || test $? -eq 2
 ```
-
-.
