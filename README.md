@@ -27,8 +27,8 @@ Download [hobsontutorial.pem](https://raw.githubusercontent.com/talentpair/puppe
 
 ```bash
 # wherever the pem file is from inside cygwin
-cp /cygdrive/c/Users/username/hobsontutorial.pm .
-chmod 400 hobsontutorial.pm
+cp /cygdrive/c/Users/username/hobsontutorial.pem .
+chmod 400 hobsontutorial.pem
 
 # launch xlaunch and config it to ssh to the machine
 # 1) select multiple windows
