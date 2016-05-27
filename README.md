@@ -46,7 +46,7 @@ xlaunch.exe
 $ ls
 data  puppet-python-nlp-tools  twip
 
-# git pull in data and puppet-python-nlp-tools to make sure you're up to date
+# git pull in twip and puppet-python-nlp-tools to make sure you're up to date
 
 # provision with puppet to make sure the machine is up to date
 cd ~/puppet-python-nlp-tools
