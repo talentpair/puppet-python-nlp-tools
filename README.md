@@ -11,7 +11,11 @@ Everyone should install an X11 provider:
 
 * Available by default on linux
 * [XQuartz](https://www.xquartz.org/) is a good one for mac
-* Included with [Cygwin](http://x.cygwin.com/) on PC
+* Included with [Cygwin](http://cygwin.com/) on PC
+    * Whether or not you already have Cygwin installed, you can add Cygwin/X to your installation by downloading the latest 
+    setup-x86.exe (32-bit installation) or setup-x86_64.exe (64-bit installation) 
+    * Install Net --> openssh
+    * Install X11 --> 'xinit' and 'xlaunch'
     
 Everyone should also have git.
 
@@ -22,10 +26,23 @@ The vagrant setup is unreliable so we'll just use an amazon server.  Ask the ins
 Download [hobsontutorial.pem](https://raw.githubusercontent.com/talentpair/puppet-python-nlp-tools/master/hobsontutorial.pem) and ssh to the machine from cygwin
 
 ```bash
-chmod 400 data/hobsontutorial.pem
-ssh -X -i data/hobsontutorial.pem  ubuntu@someipaddress
+# wherever the pem file is from inside cygwin
+cp /cygdrive/c/Users/username/hobsontutorial.pm .
+chmod 400 hobsontutorial.pm
 
-# you should see a data directory, this repo and the main tutorial repo
+# launch xlaunch and config it to ssh to the machine
+# 1) select multiple windows
+# 2) start a program
+# 3) start a program on a remote computer
+# connect using: ssh
+# remote program: xterm
+# connect to computer: x.x.x.x
+# login as user: ubuntu
+# uncheck the boxes
+# Additional parameters for ssh: '-i ~/hobsontutorial.pem' 
+xlaunch.exe
+
+# In ~ on the remote machine you should now see a data directory, this repo and the main tutorial repo
 $ ls
 data  puppet-python-nlp-tools  twip
 
@@ -36,7 +53,7 @@ cd ~/puppet-python-nlp-tools
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/tutorial.pp || test $? -eq 2
 
 # verify your setup by running the plottest.py script, you should get a simple plot
-python ~/puppet-python-nlp-tools/plottest.py 
+python plottest.py 
 ```
 
 ## Mac / Linux
