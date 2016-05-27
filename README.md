@@ -103,6 +103,7 @@ ls /home/vagrant/data/all_tweets.csv
 
 ```bash
 # First, SSH to the machine
+ssh -X -i ~/hobsontutorial.pem  ubuntu@52.27.234.68  
 
 # Install the tools you need to bootstrap
 sudo apt-get install git puppet
