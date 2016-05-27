@@ -12,11 +12,11 @@ Everyone should install an X11 provider:
 * Available by default on linux
 * [XQuartz](https://www.xquartz.org/) is a good one for mac
 * Included with [Cygwin](http://cygwin.com/) on PC
-    * Whether or not you already have Cygwin installed, you can add Cygwin/X to your installation by downloading the latest 
-    setup-x86.exe (32-bit installation) or setup-x86_64.exe (64-bit installation) 
+    * Whether or not you already have Cygwin installed, you can add Cygwin/X to your installation by downloading the latest
+    setup-x86.exe (32-bit installation) or setup-x86_64.exe (64-bit installation)
     * Install Net --> openssh
     * Install X11 --> 'xinit' and 'xlaunch'
-    
+
 Everyone should also have git.
 
 ## Windows
@@ -39,7 +39,7 @@ chmod 400 hobsontutorial.pm
 # connect to computer: x.x.x.x
 # login as user: ubuntu
 # uncheck the boxes
-# Additional parameters for ssh: '-i ~/hobsontutorial.pem' 
+# Additional parameters for ssh: '-i ~/hobsontutorial.pem'
 xlaunch.exe
 
 # In ~ on the remote machine you should now see a data directory, this repo and the main tutorial repo
@@ -53,7 +53,7 @@ cd ~/puppet-python-nlp-tools
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/tutorial.pp || test $? -eq 2
 
 # verify your setup by running the plottest.py script, you should get a simple plot
-python plottest.py 
+python plottest.py
 ```
 
 ## Mac / Linux
@@ -79,12 +79,12 @@ vagrant up --provision
 # verify your setup by running the plottest.py script, you should get a simple plot
 # his should be done from XQuartz on a mac, the normal terminal will not have X11 enabled
 vagrant ssh
-python /vagrant/plottest.py 
+python /vagrant/plottest.py
 ```
 
 ## Lets get to the data science!
 
-Instructions are at [github.com/totalgood/twip](https://github.com/totalgood/twip/), they should be run inside your vagrant box 
+Instructions are at [github.com/totalgood/twip](https://github.com/totalgood/twip/), they should be run inside your vagrant box
 
 ```bash
 # SSH to your fancy new machine
@@ -103,7 +103,7 @@ ls /home/vagrant/data/all_tweets.csv
 
 ```bash
 # First, SSH to the machine
-ssh -X -i ~/hobsontutorial.pem  ubuntu@52.27.234.68  
+ssh -X -i ~/hobsontutorial.pem  ubuntu@52.27.234.68
 
 # Install the tools you need to bootstrap
 sudo apt-get install git puppet
@@ -123,3 +123,5 @@ screen          # screen -rd will get you back
 # Do the full install including stuff from apt and pip
 sudo puppet apply --detailed-exitcodes --parser=future --modulepath=modules manifests/tutorial.pp || test $? -eq 2
 ```
+
+.
